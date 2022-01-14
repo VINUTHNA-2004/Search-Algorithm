@@ -18,28 +18,122 @@ To write a program to perform linear search and binary search using python progr
 6.	Repeat steps 2 to 5 until low meets high
 ## Program:
 i)	#Use a linear search method to match the item in a list.
-```
+```python
+''' 
+Program for linear search method to match the item in a list
+Developed by: your name: D.R.Vinuthuna
+RegisterNumber: 21005742
+'''
+def linearsearch(array, n, k):
+
+    for i in range(0, n):
+        if (array [i] == k):
+            return i
+    return -1
+
+array = eval(input())
+k =  eval(input())
+n = len(array)
+array.sort()
+result = linearsearch(array, n, k)
+if(result == -1):
+    print(array)
+    print("Element not found")
+else:
+    print(array)
+    print("Element found at index: ", result)
+    
 
 
 
 ```
+## output:
+![output](https://github.com/VINUTHNA-2004/Search-Algorithm/blob/main/lin%20ser.JPG?raw=true)
+
 ii)	# Find the element in a list using Binary Search(Iterative Method).
+```python
+''' 
+Program to find the element in a list using Binary Search(Iterative Method)..
+Developed by: your name:D.R.Vinuthuna
+RegisterNumber: 21005742
+'''
+def binarySearchIter(array, k, low, high):
+    while low <= high:
+        mid = low + (high - low)//2
+        if array[mid] == k:
+            return mid
+        elif array[mid] < k:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+    
+array = eval(input())
+array.sort()
+k = eval(input())
+
+result = binarySearchIter(array, k, 0, len(array)-1)
+
+if(result == -1):
+    print(array)
+    print("Element not found")
+else:
+    print(array)
+    print("Element found at index: ", result)
+
+
+
+
+
+
+
 ```
+## output:
+![output](https://github.com/VINUTHNA-2004/Search-Algorithm/blob/main/bin%20ser%201.JPG?raw=true)
 
-
-
-
-
-```
 iii)	# Find the element in a list using Binary Search (recursive Method).
+```python
+''' 
+Program to find the element in a list using Binary Search (recursive Method).
+Developed by: your name:D.R.Vinuthuna
+RegisterNumber: 21005742
+'''
+def BinarySearch(arr, k, low, high):
+    if high >= low:
+        mid = low + (high - low)//2
+        if arr[mid] == k:
+            return mid
+        elif arr[mid] > k:
+            return BinarySearch(arr, k, low, mid-1)
+        else:
+            return BinarySearch(arr, k, mid + 1, high)
+    else:
+        return -1
+
+    
+    
+arr = eval(input())
+arr.sort()
+k = eval(input())
+
+result = BinarySearch(arr, k, 0, len(arr)-1)
+if(result == -1):
+    print(arr)
+    print("Element not found")
+else:
+    print(arr)
+    print("Element found at index: ", result)
+
+
+
+
+
+
+
 ```
+## output:
+![output](https://github.com/VINUTHNA-2004/Search-Algorithm/blob/main/bin%20ser2.JPG?raw=true)
 
-
-
-
-
-```
-## Sample Input and Output
 
 
 
